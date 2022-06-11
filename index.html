@@ -4,10 +4,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>number guessing game
-    </title>
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+        }
+        h1, #enter, #all{
+            text-align: center;
+        }
+        #out{
+            background-color: aqua;
+            padding: 2%;
+        }
+        #result, #hilow, #previous{
+            text-align: center;
+          padding: 1%;
+        }
+        #restart, #previous{
+            visibility: hidden;
+        }
+        #footer{
+            text-align: center;
+            position: fixed;
+            bottom: 0%;
+            width: 100%;
+            background-color: rgb(135, 131, 131);
+        }
+    </style>
 </head>
 <body>
+    <h1>Number Guessing Game</h1>
+    <div id="out">
+        
+    <p>We have selected a random number between 1 and 100. See if you can guess it . We'll tell you if your guess was too high or too low.</p><br>
+    <div id="all">
+    <label>Enter a number :</label>
+    <input type="number" id="enter"> 
+    <input type="submit" value="Submit Guess" id="submit">
+   
+
+        <div id="previous" > Previous Guesses : </div>
+        <div id="result"></div>
+        <div id="hilow" ></div>
+        <button id="restart" onclick="location.reload()" >Restart Game</button>
+        
+    </div>
+</div>
+<div id="footer"> @immridulsharma</div>
+<script>
+    let random= Math.floor((Math.random() * 100) + 1);
+    var enter= document.getElementById("enter");
+    let submit = document.getElementById("submit");
+    let result = document.getElementById("result");
+    let hilow = document.getElementById("hilow");
+    let prev = document.getElementById("previous");
+    let restart = document.getElementById("restart");
+    var num;
+    submit.addEventListener('click', function(){
+        num = enter.value;
+        console.log(random);
+       prev.style.visibility = "visible";
+        prev.innerHTML += " " + num;
+    if(num==random){
+        result.innerHTML ="CONGRATS! YOU ARE RIGHT.";
+        result.style.color = "green";
+        hilow.innerHTML ="";
+        restart.style.visibility = "visible";
+    }
+    if(num!=random){
+        result.innerHTML ="WRONG GUESS!";
+        result.style.color = "red";
     
+    if(num>random){
+        hilow.innerHTML = "entered number is too high.";
+    }
+    if(num<random){
+        hilow.innerHTML = "entered number is too low.";
+    }
+}
+    });
+    
+    
+</script>
 </body>
 </html>
