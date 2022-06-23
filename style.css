@@ -1,0 +1,25 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+h1, #enter, #all{
+    text-align: center;
+}
+#out{
+    background-color: aqua;
+    padding: 2%;
+}
+#result, #hilow, #previous{
+    text-align: center;
+  padding: 1%;
+}
+#restart, #previous{
+    visibility: hidden;
+}
+#footer{
+    text-align: center;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    background-color: rgb(135, 131, 131);
+}
