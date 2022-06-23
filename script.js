@@ -1,6 +1,36 @@
-var a=6;
-console.log(a);
 
+let random= Math.floor((Math.random() * 100) + 1);
+    var enter= document.getElementById("enter");
+    let submit = document.getElementById("submit");
+    let result = document.getElementById("result");
+    let hilow = document.getElementById("hilow");
+    let prev = document.getElementById("previous");
+    let restart = document.getElementById("restart");
+    var num;
+    submit.addEventListener('click', function(){
+        num = enter.value;
+        console.log(random);
+       prev.style.visibility = "visible";
+        prev.innerHTML += " " + num;
+    if(num==random){
+        result.innerHTML ="CONGRATS! YOU ARE RIGHT.";
+        result.style.color = "green";
+        hilow.innerHTML ="";
+        restart.style.visibility = "visible";
+    }
+    if(num!=random){
+        result.innerHTML ="WRONG GUESS!";
+        result.style.color = "red";
+    
+    if(num>random){
+        hilow.innerHTML = "entered number is too high.";
+    }
+    if(num<random){
+        hilow.innerHTML = "entered number is too low.";
+    }
+}
+    });
+    
 
 
 /*let randomNumber = Math.floor(Math.random() * 100) + 1;

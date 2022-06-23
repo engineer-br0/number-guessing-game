@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style rel="stylesheet" type="text/css" href="style.css"></style>
     <style>
         body{
             margin: 0%;
@@ -52,40 +53,7 @@
     </div>
 </div>
 <div id="footer"> @immridulsharma</div>
-<script>
-    let random= Math.floor((Math.random() * 100) + 1);
-    var enter= document.getElementById("enter");
-    let submit = document.getElementById("submit");
-    let result = document.getElementById("result");
-    let hilow = document.getElementById("hilow");
-    let prev = document.getElementById("previous");
-    let restart = document.getElementById("restart");
-    var num;
-    submit.addEventListener('click', function(){
-        num = enter.value;
-        console.log(random);
-       prev.style.visibility = "visible";
-        prev.innerHTML += " " + num;
-    if(num==random){
-        result.innerHTML ="CONGRATS! YOU ARE RIGHT.";
-        result.style.color = "green";
-        hilow.innerHTML ="";
-        restart.style.visibility = "visible";
-    }
-    if(num!=random){
-        result.innerHTML ="WRONG GUESS!";
-        result.style.color = "red";
-    
-    if(num>random){
-        hilow.innerHTML = "entered number is too high.";
-    }
-    if(num<random){
-        hilow.innerHTML = "entered number is too low.";
-    }
-}
-    });
-    
-    
-</script>
+
+<script src="script.js"></script>
 </body>
 </html>
